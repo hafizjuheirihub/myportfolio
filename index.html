@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Nurhafiz Juheiri - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="nav-brand">Nurhafiz J. Portfolio</a>
+            <div class="hidden md:flex space-x-8 nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden nav-mobile-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden mobile-menu-overlay">
+            <button id="close-mobile-menu" class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#about" class="mobile-menu-link">About</a>
+            <a href="#experience" class="mobile-menu-link">Experience</a>
+            <a href="#education" class="mobile-menu-link">Education</a>
+            <a href="#projects" class="mobile-menu-link">Projects</a>
+            <a href="#skills" class="mobile-menu-link">Skills</a>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero/About Section -->
+        <section id="about" class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-center min-h-screen-minus-header">
+            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 md:pr-12">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight-text">Muhammad Nurhafiz Juheiri</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A Passionate <span class="font-semibold highlight-text">Information Systems Engineering Graduate</span>
+                </p>
+                <p class="hero-description">
+                    <br>
+                    Motivated and skilled Information Systems Engineering graduate passionate about solving business problems through software development or data analysis. With hands-on experience in front-end and back-end development using HTML, CSS, JavaScript, and PostgreSQL, enhanced strong technical skills throughout studies. Additionally, certified in Power BI Essential Training, with practical experience in data visualization gained through my internship as a Business Analyst. Eager to contribute to the software development life cycle, continuously grow my knowledge, and apply my expertise in creating and maintaining effective IT solutions.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                    <a href="#contact" class="btn btn-primary ml-10">
+                        <i class="fas fa-envelope mr-2"></i> Contact Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank" class="btn btn-secondary ml-3">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-2/5 flex justify-center md:justify-end">
+                <img src="images.jpeg" alt="Muhammad Nurhafiz Juheiri" class="profile-image">
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="section-bg-alt py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading">Work Experience</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- SD Guthrie Berhad -->
+                    <div class="card">
+                        <h3 class="card-title">Business Analyst Internship</h3>
+                        <p class="card-subtitle">SD Guthrie Berhad</p>
+                        <p class="card-date">Sep 2024 - Feb 2025</p>
+                        <ul class="card-list">
+                            <li>Analyzed interview insights to identify process inefficiencies and lead to recommendations for operational improvements.</li>
+                            <li>Updated machine allocation and maintenance process mapping by incorporating stakeholder feedback.</li>
+                            <li>Compiled and analyzed IT/OT assessment survey data from multiple refineries to support digital transformation initiatives.</li>
+                            <li>Managed follow-up communications to ensure the timely updates of IT/OT assessments across refineries.</li>
+                            <li>Acquired expertise in Power BI through LinkedIn Learning.</li>
+                            <li>Designed and built comprehensive dashboards for 2024 data visualization while effectively utilizing the skills obtained from Power BI Essential Training certification.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading">Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- UiTM -->
+                    <div class="card">
+                        <h3 class="card-title">Bachelor of Information Systems (Hons.) Information Systems Engineering</h3>
+                        <p class="card-subtitle">University of Technology Mara (UiTM), Jasin Melaka</p>
+                        <p class="card-date">Oct 2021 - Feb 2025</p>
+                        <p class="card-text">CGPA: 3.32</p>
+                    </div>
+                    <!-- Perak Matriculation College -->
+                    <div class="card">
+                        <h3 class="card-title">Malaysia Matriculation Program - Module III (Science Computer)</h3>
+                        <p class="card-subtitle">Perak Matriculation College, Gopeng</p>
+                        <p class="card-date">July 2020 - May 2021</p>
+                        <p class="card-text">CGPA: 3.33, MUET: Band 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-bg-alt py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1: Machine Allocation & Maintenance Process Mapping -->
+                    <div class="card project-item" data-project-id="project1">
+                        <h3 class="card-title">Machine Allocation & Maintenance Process Mapping</h3>
+                        <p class="card-subtitle">Internship Project</p>
+                        <p class="card-date">During Internship (Sep 2024 - Feb 2025)</p>
+                        <ul class="card-list hidden" id="project1-details">
+                            <li>Transcribed interview recordings to identify opportunities and risks in the current process.</li>
+                            <li>Engaged with stakeholders and related teams to validate the updated process mapping.</li>
+                            <li>Gained hands-on experience with Agile methodology throughout the project, enhancing adaptability and collaboration.</li>
+                        </ul>
+                        <button class="btn-link toggle-details" data-target="project1-details">Read More</button>
+                    </div>
+
+                    <!-- Project 2: Pawtarian Adoption System -->
+                    <div class="card project-item" data-project-id="project2">
+                        <h3 class="card-title">Pawtarian Adoption System - Connecting Pets with New Owner</h3>
+                        <p class="card-subtitle">Final Year Project</p>
+                        <!-- <p class="card-date">Details available on request</p> -->
+                        <ul class="card-list hidden" id="project2-details">
+                            <li>Collaborated with stakeholders to gather and analyze system requirements to ensure the system aligned with user needs and expectations.</li>
+                            <li>Documented functional and non-functional requirements in Software Requirement Specification (SRS).</li>
+                            <li>Designed system architecture in Software Design Document (SDD).</li>
+                            <li>Designed and managed a database using TablePlus and pgAdmin4.</li>
+                            <li>Developed and implemented the system using Java language, HTML, CSS, JavaScript and PostgreSQL.</li>
+                        </ul>
+                        <button class="btn-link toggle-details" data-target="project2-details">Read More</button>
+                    </div>
+
+                    <!-- Project 3: Badminton Court Booking System -->
+                    <div class="card project-item" data-project-id="project3">
+                        <h3 class="card-title">Badminton Court Booking System</h3>
+                        <p class="card-subtitle">Group Project</p>
+                        <!-- <p class="card-date">Details available on request</p> -->
+                        <ul class="card-list hidden" id="project3-details">
+                            <li>Cooperated closely with the team and stakeholders to assess requirements and design a system tailored to meet user needs and expectations.</li>
+                            <li>Designed and managed a database using TablePlus and pgAdmin4.</li>
+                            <li>Contributed to the development for front end and back end of the system using Java, HTML, CSS, JavaScript, and PostgreSQL.</li>
+                        </ul>
+                        <button class="btn-link toggle-details" data-target="project3-details">Read More</button>
+                    </div>
+
+                    <!-- Project 4: Starbucks Website - Front End Development -->
+                    <div class="card project-item" data-project-id="project4">
+                        <h3 class="card-title">Starbucks Website - Front End Development</h3>
+                        <p class="card-subtitle">Group Project</p>
+                        <!-- <p class="card-date">Details available on request</p> -->
+                        <ul class="card-list hidden" id="project4-details">
+                            <li>Collaborated with the team to build a front-end website from scratch, using Starbucks' design and functionality as a reference for UI/UX.</li>
+                            <li>Focused on creating and implementing the feedback section to ensure a seamless user experience using HTML and CSS.</li>
+                        </ul>
+                        <button class="btn-link toggle-details" data-target="project4-details">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Technical Skills -->
+                    <div class="card">
+                        <h3 class="card-title-small"><i class="fas fa-cogs mr-2 highlight-text"></i>Technical Skills</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="skill-category">Programming Languages:</h4>
+                                <p class="skill-list">Java, JavaScript, C++</p>
+                            </div>
+                            <div>
+                                <h4 class="skill-category">Web Development:</h4>
+                                <p class="skill-list">HTML, CSS, Bootstrap</p>
+                            </div>
+                            <div>
+                                <h4 class="skill-category">Database Management:</h4>
+                                <p class="skill-list">TablePlus, PostgreSQL & MySQL</p>
+                            </div>
+                            <div>
+                                <h4 class="skill-category">Documentation:</h4>
+                                <p class="skill-list">Software Requirement Specification (SRS), Software Design Document (SDD)</p>
+                            </div>
+                            <div>
+                                <h4 class="skill-category">Operating Systems:</h4>
+                                <p class="skill-list">Windows</p>
+                            </div>
+                            <div>
+                                <h4 class="skill-category">Software & Tools:</h4>
+                                <p class="skill-list">Eclipse, Visual Studio Code, NetBeans, Draw.io, StarUML, Lucidchart</p>
+                            </div>
+                            <div>
+                                <h4 class="skill-category">Data Visualization:</h4>
+                                <p class="skill-list">Microsoft Power BI</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="card">
+                        <h3 class="card-title-small"><i class="fas fa-users mr-2 highlight-text"></i>Soft Skills</h3>
+                        <ul class="card-list">
+                            <li>Good collaborator</li>
+                            <li>Strong time management</li>
+                            <li>Problem-solving</li>
+                            <li>Critical thinking skills</li>
+                            <li>Adaptable to new challenges and evolving environments</li>
+                        </ul>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="card">
+                        <h3 class="card-title-small"><i class="fas fa-language mr-2 highlight-text"></i>Languages</h3>
+                        <ul class="card-list">
+                            <li>Malay (Native)</li>
+                            <li>English (Intermediate)</li>
+                            <li>Arabic and Mandarin (Low proficiency)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Awards Section -->
+        <section id="certifications-awards" class="section-bg-alt py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading">Certifications & Awards</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Certifications -->
+                    <div class="card">
+                        <h3 class="card-title-small"><i class="fas fa-certificate mr-2 highlight-text"></i>Certifications</h3>
+                        <ul class="card-list">
+                            <li>Power BI Essential Training (Nov 2024)</li>
+                        </ul>
+                    </div>
+                    <!-- Awards and Recognition -->
+                    <div class="card">
+                        <h3 class="card-title-small"><i class="fas fa-award mr-2 highlight-text"></i>Awards and Recognition</h3>
+                        <ul class="card-list">
+                            <li>Dean List Award Semester 2 - Session 2021/2022 (Aug 2022)</li>
+                            <li>Dean List Award Semester 6 - Session 2023/2024 (Aug 2024)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extracurricular Activities Section -->
+        <section id="extracurricular" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading">Extracurricular Activities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card">
+                        <h3 class="card-title-small">Service-Learning Malaysia University for Society (SULAM)</h3>
+                        <p class="card-subtitle">Security Committee Member</p>
+                        <p class="card-date">Jan 2023</p>
+                        <ul class="card-list">
+                            <li>Involved in mangrove tree planting, team activities, and cleaning at Pulau Besar, Melaka.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title-small">Educational Visit to Setel Ventures Sdn Bhd</h3>
+                        <p class="card-subtitle">Souvenir Committee Member</p>
+                        <p class="card-date">June 2023</p>
+                        <ul class="card-list">
+                            <li>Participated in an educational visit focused on exploring software improvement strategies within the company.</li>
+                            <li>Managed the end-to-end process of souvenir curation and acquisition.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title-small">Educational Visit to Etiqa General Insurance Berhad</h3>
+                        <p class="card-subtitle">Transportation Committee Member</p>
+                        <p class="card-date">June 2024</p>
+                        <ul class="card-list">
+                            <li>Attended an educational visit centered on IT security.</li>
+                            <li>Organized transportation logistics for events, ensuring smooth event execution.</li>
+                            <li>Ensured the inclusion and comfort of all participants while traveling and upon arrival at each destination.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-heading-light">Get in Touch</h2>
+                <p class="contact-availability">I'm currently available for full-time employment beginning 3 March 2025.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-8 mb-12">
+                    <a href="mailto:nhafizj02@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope mr-3"></i> nhafizj02@gmail.com
+                    </a>
+                    <a href="tel:+601113141992" class="contact-link">
+                        <i class="fas fa-phone-alt mr-3"></i> (+60)1113141992
+                    </a>
+                    <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin mr-3"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="references-section">
+                    <h3 class="references-title">References:</h3>
+                    <div class="reference-item">
+                        <p><strong>Madam Noor Afni Binti Deraman</strong> (Supervisor for Final Year Project)</p>
+                        <p>Email: <a href="mailto:noorafni215@gmail.edu.my" class="reference-email">noorafni215@gmail.edu.my</a> | <a href="mailto:noora465@uitm.edu.my" class="reference-email">noora465@uitm.edu.my</a></p>
+                    </div>
+                    <div class="reference-item mt-4">
+                        <p><strong>Mr Suhaimi Misran</strong> (Supervisor Industry for Internship)</p>
+                        <p>Email: <a href="mailto:suhaimi.misran@sdguthrie.com" class="reference-email">suhaimi.misran@sdguthrie.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content-wrapper">
+            <p>&copy; 2025 Muhammad Nurhafiz Juheiri. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:nhafizj02@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <!-- Add GitHub or other relevant links here -->
+                <!-- <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a> -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

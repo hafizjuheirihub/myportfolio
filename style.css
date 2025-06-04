@@ -1,0 +1,589 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #6A5ACD; /* SlateBlue - a modern, elegant purple */
+    --primary-hover-color: #483D8B; /* DarkSlateBlue */
+    --secondary-color: #4682B4; /* SteelBlue */
+    --secondary-hover-color: #4169E1; /* RoyalBlue */
+    
+    --background-dark: #121212; /* Very dark grey, almost black */
+    --background-light: #1E1E1E; /* Slightly lighter dark grey */
+    --background-card: #2A2A2A; /* Dark grey for cards */
+    --background-card-alpha: rgba(42, 42, 42, 0.85); /* Semi-transparent card background */
+
+    --text-light: #EAEAEA; /* Light grey for text */
+    --text-medium: #B0B0B0; /* Medium grey for less important text */
+    --text-dark: #121212; /* Dark text for light backgrounds (buttons) */
+    --text-highlight: var(--primary-color);
+
+    --border-color: #3A3A3A; /* Subtle border color */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-strong-color: rgba(0, 0, 0, 0.5);
+
+    --font-primary: 'Inter', sans-serif;
+    --transition-speed: 0.3s;
+    --border-radius: 0.75rem; /* 12px */
+    --border-radius-large: 1rem; /* 16px */
+
+    /* RGB value for primary color - used in box-shadows with alpha */
+    --primary-color-rgb: 106, 90, 205; /* Corresponds to #6A5ACD */
+}
+
+body {
+    font-family: var(--font-primary);
+    scroll-behavior: smooth;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover-color);
+}
+
+/* --- Header & Navigation --- */
+/* Ensure header is visible and correctly positioned. */
+/* If navbar is not appearing, check if the <header> HTML element exists and is correctly structured in your index.html */
+header {
+    background-color: rgba(18, 18, 18, 0.85); /* Dark, slightly transparent */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* High z-index to stay on top */
+    top: 0;
+    left: 0;
+    /* transition for any potential future animations, not strictly necessary for visibility */
+    /* transition: top 0.3s ease-in-out; */
+}
+
+.nav-brand {
+    font-size: 1.75rem; /* 28px */
+    font-weight: 800;
+    color: var(--text-light);
+    transition: color var(--transition-speed) ease;
+    text-decoration: none; /* Ensure no underline by default */
+}
+.nav-brand:hover {
+    color: var(--primary-color);
+}
+
+/* --- Header & Navigation --- */
+/* ... (your existing header, nav-brand, etc. styles) ... */
+
+.nav-links {
+    display: none; /* Hidden by default (for small screens) */
+    /* Tailwind's space-x-8 functionality is for direct children of a flex container.
+       If .nav-links itself is flex, space-x-8 would apply to its children (the <a> tags).
+       The parent <nav> is already 'flex', so space-x-8 on .nav-links might be redundant
+       if .nav-links is not also 'flex'. However, Tailwind's space-x-* utilities
+       are typically applied to the flex container whose direct children you want to space.
+       Since the original had md:flex, we'll make .nav-links a flex container on md screens.
+    */
+}
+
+.nav-links a {
+    color: var(--text-medium);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--transition-speed) ease;
+    text-decoration: none;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+.nav-links a:hover,
+.nav-links a.active { /* JS should add/remove 'active' class */
+    color: var(--text-light);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 60%;
+}
+
+/* Medium screens and up (Tailwind's 'md' breakpoint is typically 768px) */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex; /* Show and layout as flex on medium screens and up */
+    }
+
+    /* The mobile menu button should be hidden on medium screens and up.
+       Tailwind's md:hidden class on the button should still handle this.
+       If not, you could add:
+       .nav-mobile-button {
+           display: none;
+       }
+    */
+}
+
+/* ... (rest of your .nav-mobile-button, .mobile-menu-overlay, etc. styles) ... */
+
+.nav-mobile-button {
+    color: var(--text-medium);
+    font-size: 1.5rem; /* 24px */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem; /* Make it easier to tap */
+}
+.nav-mobile-button:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0; /* Cover the whole screen */
+    background-color: rgba(18, 18, 18, 0.98); /* Slightly more opaque */
+    backdrop-filter: blur(12px);
+    z-index: 999; /* Below header but above content */
+    display: flex; /* Use flex for centering content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* 32px */
+    transform: translateY(-100%); /* Start off-screen */
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    /* Ensure visibility is also handled if needed, though transform is preferred for animation */
+    /* visibility: hidden; */
+}
+/* This class is toggled by JavaScript */
+.mobile-menu-overlay.hidden { 
+    transform: translateY(-100%) !important; /* Keep it off-screen */
+    /* visibility: hidden !important; */
+}
+/* When 'hidden' class is NOT present, menu slides in */
+.mobile-menu-overlay:not(.hidden) {
+    transform: translateY(0);
+    /* visibility: visible; */
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 1.5rem; /* 24px */
+    right: 1.5rem; /* 24px */
+    font-size: 1.75rem; /* 28px */
+    color: var(--text-medium);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.mobile-menu-close:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-link {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 500;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Add some padding for better tap targets */
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+.mobile-menu-link:hover {
+    color: var(--primary-color);
+}
+.mobile-menu-link.active { /* JS should add/remove 'active' class */
+    color: var(--primary-color); 
+    font-weight: 700; 
+}
+
+/* --- Main Content & Sections --- */
+main {
+    padding-top: 74px; /* Crucial for preventing overlap with fixed header. Adjust if header height changes. */
+}
+
+section {
+    padding: 4rem 0; 
+    opacity: 0; /* Initial state for animation */
+    animation: fadeInSection 0.8s ease-out forwards;
+}
+/* Staggered animation for sections */
+#about { animation-delay: 0.1s; }
+#experience { animation-delay: 0.2s; }
+#education { animation-delay: 0.3s; }
+#projects { animation-delay: 0.4s; }
+#skills { animation-delay: 0.5s; }
+#certifications-awards { animation-delay: 0.6s; }
+#extracurricular { animation-delay: 0.7s; }
+#contact { animation-delay: 0.8s; }
+
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-bg-alt {
+    background-color: var(--background-light);
+}
+
+.section-heading {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 3rem; /* 48px */
+    position: relative;
+    display: inline-block; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.section-heading-light { 
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 2rem; /* 32px */
+    position: relative;
+    display: inline-block;
+    left: 10%;
+    transform: translateX(-50%);
+}
+.section-heading-light::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background-color: var(--text-light); 
+    border-radius: 2px;
+}
+
+
+/* --- Hero Section --- */
+
+
+.min-h-screen-minus-header { 
+    min-height: calc(100vh - 74px); /* Adjust 74px if header height changes */
+}
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    font-weight: 800;
+    color: var(--text-light);
+    line-height: 1.2;
+    margin-bottom: 1rem; /* 16px */
+}
+.hero-subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.75rem); 
+    color: var(--text-medium);
+}
+.hero-description {
+    font-size: 1.125rem; /* 18px */
+    color: var(--text-medium);
+    line-height: 1.8;
+    max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+.highlight-text {
+    color: var(--text-highlight);
+    font-weight: 700;
+}
+.profile-image {
+    width: clamp(200px, 50vw, 350px); 
+    height: clamp(200px, 50vw, 350px); 
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(var(--primary-color-rgb), 0.4); 
+    transition: transform var(--transition-speed) ease-in-out;
+}
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.75rem; /* 12px 28px */
+    border-radius: var(--border-radius-large);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed) ease-in-out;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light); 
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(var(--primary-color-rgb), 0.3);
+}
+.btn-secondary {
+    background-color: var(--background-card);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    transform: translateY(-3px) scale(1.02);
+}
+.btn-link {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
+.btn-link:hover {
+    color: var(--primary-hover-color);
+}
+
+/* --- Cards --- */
+.card {
+    background-color: var(--background-card-alpha);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius-large);
+    padding: 2rem; /* 32px */
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+    border: 1px solid var(--border-color);
+    color: var(--text-medium);
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow-strong-color);
+}
+.card-title {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem; /* 8px */
+}
+.card-title-small {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem; /* 16px */
+}
+.card-subtitle {
+    font-size: 1.1rem; /* 17.6px */
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem; /* 8px */
+}
+.card-date {
+    font-size: 0.9rem; /* 14.4px */
+    color: var(--text-medium);
+    margin-bottom: 1rem; /* 16px */
+    font-style: italic;
+}
+.card-text {
+    font-size: 1rem; /* 16px */
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+.card-list {
+    list-style-position: outside;
+    padding-left: 1.25rem; /* 20px */
+    margin-top: 1rem; /* 16px */
+}
+.card-list li {
+    margin-bottom: 0.5rem; /* 8px */
+    color: var(--text-medium);
+    position: relative;
+    padding-left: 10px; 
+}
+.card-list li::before {
+    content: '▹'; 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Project Item Specific */
+.project-item {
+    cursor: default; 
+}
+
+/* Skills Section Specific */
+.skill-category {
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.25rem; /* 4px */
+}
+.skill-list {
+    color: var(--text-medium);
+    font-size: 0.95rem; /* 15.2px */
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--text-light);
+}
+.contact-availability {
+    font-size: 1.25rem; /* 20px */
+    margin-bottom: 2rem; /* 32px */
+    font-weight: 500;
+}
+.contact-link {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    color: var(--text-light);
+    padding: 1rem 2rem; /* 16px 32px */
+    border-radius: var(--border-radius-large);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.contact-link i {
+    font-size: 1.3em;
+}
+.contact-link:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+/* References in Contact Section */
+.references-section {
+    margin-top: 3rem; /* 48px */
+    color: var(--text-light); 
+}
+.references-title {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    margin-bottom: 1.5rem; /* 24px */
+}
+.reference-item p {
+    margin-bottom: 0.5rem; /* 8px */
+    line-height: 1.6;
+}
+.reference-item strong {
+    font-weight: 600;
+}
+.reference-email {
+    color: var(--text-light); 
+    text-decoration: underline;
+    transition: color var(--transition-speed) ease;
+}
+.reference-email:hover {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #0A0A0A; 
+    color: var(--text-medium);
+    padding: 2.5rem 0; /* 40px */
+    text-align: center; 
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content-wrapper {
+  width: 100%; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem; /* px-6 */
+  text-align: center; 
+}
+
+/* Responsive max-widths for container behavior */
+@media (min-width: 640px) {
+  .footer-content-wrapper { max-width: 640px; }
+}
+@media (min-width: 768px) {
+  .footer-content-wrapper { max-width: 768px; }
+}
+@media (min-width: 1024px) {
+  .footer-content-wrapper { max-width: 1024px; }
+}
+@media (min-width: 1280px) {
+  .footer-content-wrapper { max-width: 1280px; }
+}
+@media (min-width: 1536px) {
+  .footer-content-wrapper { max-width: 1536px; }
+}
+
+
+footer p {
+    margin-bottom: 1rem; /* 16px */
+    font-size: 0.9rem; /* 14.4px */
+}
+.social-links a {
+    color: var(--text-medium);
+    font-size: 1.5rem; /* 24px */
+    margin: 0 0.75rem; /* 12px */
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    display: inline-block; 
+}
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* --- Utility & Overrides --- */
+/* This is Tailwind's default hidden class behavior. */
+/* It's used by JavaScript to toggle mobile menu visibility. */
+/* Ensure this definition is not conflicting if you have custom 'hidden' states. */
+.hidden {
+    display: none !important; 
+}
+
+
+/* Adjust min-h-screen-minus-header if using Tailwind */
+/* This class is used on the hero section to make it take up screen height minus header. */
+.min-h-screen-minus-header {
+    min-height: calc(100vh - 74px); /* Ensure 74px matches actual header height */
+}

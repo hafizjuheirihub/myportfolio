@@ -309,6 +309,8 @@ section {
 .hero-subtitle {
     font-size: clamp(1.25rem, 3vw, 1.75rem); 
     color: var(--text-medium);
+    margin-left: auto;
+    margin-right: auto;
 }
 .hero-description {
     font-size: 1.125rem; /* 18px */
@@ -330,6 +332,7 @@ section {
     border: 6px solid var(--primary-color);
     box-shadow: 0 0 30px rgba(var(--primary-color-rgb), 0.4); 
     transition: transform var(--transition-speed) ease-in-out;
+    margin-right: 15%;
 }
 .profile-image:hover {
     transform: scale(1.05);
@@ -340,14 +343,16 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.75rem; /* 12px 28px */
-    border-radius: var(--border-radius-large);
+    width: 3rem; /* or any equal width/height */
+    height: 3rem;
+    border-radius: 50%;
     font-weight: 600;
     text-decoration: none;
     transition: all var(--transition-speed) ease-in-out;
     border: 2px solid transparent;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 0; /* optional: remove padding to avoid distortion */
 }
 .btn-primary {
     background-color: var(--primary-color);
@@ -384,6 +389,44 @@ section {
 }
 
 /* --- Cards --- */
+/* #img {
+justify-content: center;
+} */
+ /* For the "View & Download CV" button on the main page */
+.btn-cv {
+            display: inline-block;
+            padding: 0.75rem 1.5rem; /* Tailwind: p-3 px-6 */
+            background-color: #4F46E5; /* Tailwind: bg-indigo-600 */
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem; /* Tailwind: rounded-md */
+            font-weight: 500; /* Tailwind: font-medium */
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-cv:hover {
+            background-color: #4338CA; /* Tailwind: hover:bg-indigo-700 */
+        }
+
+        /* Assuming .btn and .btn-primary are defined elsewhere for social icons */
+        /* For demonstration, let's add some basic styling for them */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem; /* p-3 */
+            border-radius: 9999px; /* rounded-full */
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #6366F1; /* Example: indigo-500 */
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #4F46E5; /* Example: indigo-600 */
+        }
+
 .card {
     background-color: var(--background-card-alpha);
     backdrop-filter: blur(5px);

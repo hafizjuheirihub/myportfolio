@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="listCust2.css">
+    <!---box icons--->   
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!---google fonts--->   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Company Name on the Left Side -->
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="">
+                 PAWTARIAN ADOPTION
+            </a>
+
+            <!-- Toggler/collapsibe Button for Small Screens -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links on the Right Side -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepagecust.jsp">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listAdoptPetsController">Pets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="requestController">Pets Request</a>
+                    </li>
+                    <li class="dropdown1">
+            <button class="dropbtn1">Post Adoption<span class="caret"></span></button>
+            <div id="myDropdown1" class="dropdown-content1">
+                <a href="listPostAdoptionController">Second Vaccination</a>
+                <a href="listPostAdoptionController2">Pet's Current Condition</a>
+            </div>
+        </li>
+                </ul>
+                
+  				<div class="nav">
+					<a href="viewCustController" class="btn" style='margin-left:100px'><i class="fas fa-user-circle"></i></a>
+				<div class="bx bx-menu" id="menu-icon"></div>
+                <div class="nav"> 
+  					<a href="logincust.jsp" class="btn" style='margin-left:10px'><i class="fas fa-sign-out-alt"></i></a> 
+  				<div class="bx bx-menu" id="menu-icon"></div> 
+			</div>
+            </div>
+            </div>
+        </div>
+    </nav>
+    <header class="header">
+        <h1 >Welcome <span><input type="hidden" class="form-control" id="cust" name="CustID" value="<c:out value="${sessionScope.CustID}"/>">
+ 						<label for="name" class="child" ><c:out value="${sessionScope.CustName}"/></label></span> to
+         Pawtarian Adoption Website !</h1>
+      </header>
+ 
+<!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 5</div>
+      <img src="img/aboutus2.jpg" width="1665" height="550">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 5</div>
+      <img src="img/aboutus3.jpg" width="1665" height="550">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 5</div>
+      <img src="img/aboutus4.jpg" width="1665" height="550">
+  </div>
+  
+  <div class="mySlides">
+    <div class="numbertext">4 / 5</div>
+      <img src="img/aboutus5.jpg" width="1665" height="550">
+  </div>
+  
+  <div class="mySlides">
+    <div class="numbertext">5 / 5</div>
+      <img src="img/aboutus6.jpg" width="1665" height="550">
+  </div>
+  
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br><br><br>
+
+<h3>OWNER FOUNDER</h3>
+  <section class="about" id="about">
+	<div class="about-img">
+		<img src="img/owner.jpg">
+	</div>
+	<div class="about-text">
+		<p>Navwinderan A/L Mahenderan, the visionary founder of Pawtarian, has been at the forefront of the organization's mission to advocate for the rights of street dogs in Malaysia. His passion for animal welfare and his unwavering dedication have been instrumental in driving the organization forward. With a deep-seated belief in the values of respect, responsibility, and compassion towards all living beings, Navwinderan has worked tirelessly to create a platform that inspires individuals to become agents of change, love, and compassion within their communities. </p>
+	<br><p>Pawtarian formally known as Persatuan Pembelaan Hak Anjing Jalan yang Tersisih Selangor (PAWTARIAN), is a non-governmental organization (NGO) which based in Klang, Selangor. Established in 2018 by the owner founder, Pawtarian has been dedicated to transforming the lives of street dogs and the communities they inhabit since 2013. Other than street dogs, Pawtarian also take in street cats to take good care of their welfare before opening up to adoption to find a new family.  Despite facing numerous challenges, the organization has remained steadfast in its commitment to animal welfare, focusing not only on rescues and adoptions but also on sterilization, vaccinations, and educational initiatives.</p>	
+	</div>
+</section>
+<br><br><br>
+
+<div class="work">
+<h2 class="works">OUR WORKS</h2>
+<div class="info-box">
+        <div class="info">
+            <img src="img/adoption_drive.jpg" alt="Adoption Drive">
+            <div class="details">
+                <h5>ADOPTION DRIVE WITH TEAMS</h5>
+                <h6>Pawtarian Sunday Adoption Drive was born in Bangsar. We now run weekly 
+					adoption drive on Sundays at IOI MALL, Puchong and other locations n
+					Klang Valley. Through our Adoption Drive, we have successfully rehomed 
+					400+ cats and dogs. The adoption drive draws pet lovers from both near 
+					and far, matching homeless puppies and adult dogs with suitable, loving 
+					families. This event can reduce the population of street pets.</h6>
+                
+            </div>
+       </div>
+    </div>
+     <div class="info-box">
+        <div class="info">
+            <img src="img/rescue_treatment.jpeg" alt="Rescue and Treatment">
+            <div class="details">
+                <h5>RESCUE AND TREATMENT</h5>
+                <h6>Pawtarian is dedicated to helping 
+					animals in need of medical care. We rescue and provide attention to these
+					animals, ensuring they receive the necessary treatment from veterinarians. 
+					Through our social media platform, we raise funds for their medical bills with 
+					the help of generous donors. Once these animals are healthy and 
+					ready, they are placed for adoption, giving them a second chance at a loving 
+					home.</h6>
+               
+            </div>
+            </div>
+            </div>
+    <div class="info-box">
+        <div class="info">
+            <img src="img/trap_neuter_release.jfif" alt="Trap Neuter and Release">
+            <div class="details">
+                <h5>TRAP NEUTER AND RELEASE</h5>
+                <h6>Pawtarian is dedicated to responsible TNR (Trap-Neuter and Return) efforts. We collaborate closely with local caregivers, trapping stray 
+					dogs for sterilization. After their visit to the vet, they are cared for and 
+					observed for 2-3 days before being returned to their familiar environment. 
+					This approach aims to reduce the stray population and ensures these dogs 
+					continue to receive care from dedicated feeders.</h6>
+   
+            </div>
+            </div>
+            </div>
+            </div>
+            
+            <!-- about -->
+<section class="abouts" id="abouts">
+	
+	<div class="about-texts">
+		<h2>Adopt, Don't Shop <br>Let's adopt with us </h2>
+		<p>Saving one animal will not change the world, but surely for that one animal, the world will change forever.
+		 By choosing to adopt, you are not just providing a home; you are giving that animal a second chance at life, love, and happiness.
+		Every adoption is a victory against the suffering and neglect that so many animals face. While it may seem like a small act in the
+		 grand scheme of things, for that one animal, it means everything. You are their hero, their savior, and their new beginning. 
+		 The ripple effect of this one compassionate decision can inspire others to do the same, gradually making a significant difference in the world of animal welfare.</p>
+	</div>
+		<div class="about-imgs">
+		<img src="img/adopt.jpg">
+	</div>
+</section>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 1250); // Change image every seconds
+}
+
+function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    if (slideIndex < 1) {slideIndex = slides.length}
+    showSlides();
+}
+</script>
+<style>
+.header {
+  			background-color: #333; /* Background color */
+  			color: #fff; /* Text color */
+  			padding: 20px; /* Padding around content */
+  			text-align: center; /* Center-align text */
+		}
+.abouts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+        .about-texts {
+            flex: 1;
+            padding: 20px;
+            text-align: justify;
+        }
+        .about-texts h2 {
+            font-size: 40px;
+            color: #333;
+            margin-bottom: 20px;
+            margin-left: 200px;
+        }
+        .about-texts p {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.6;
+            margin-left: 200px;
+        }
+        .about-imgs {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-imgs img {
+        margin-top: 70px;
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+.info-box .info img {
+    border-radius: 50%;
+    width: 150px; /* Adjust the width and height as needed */
+    height: 150px; /* Adjust the width and height as needed */
+    object-fit: cover; /* Ensure the image covers the entire area */
+    display: block;
+    margin: 0 auto 15px; /* Center the image and add bottom margin */
+}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* background-color: #cfc6c6;  */
+            background-image: url('img/bgg.jpg');
+   			background-size: cover; /* Cover the entire background */ 
+        }
+        
+        .navbar {
+            background-color: #ad6a6c; /* Dark color for the navbar */
+            padding: 15px 10px;
+        }
+        .navbar-brand {
+            color: #e8d6cb; /* White color for the brand name */
+            font-weight: bold;
+        }
+
+        .navbar-brand img {
+            width: 40px; /* Adjust the width of the logo */
+            margin-right: 10px; /* Adjust the spacing between logo and brand name */
+        }
+
+        .navbar-nav .nav-link {
+            color: #e8d6cb; /* White color for the links */
+            margin-left: 20px; /* Adjust spacing between links */
+            font-size: larger;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffffff; /* White color on hover */
+        }
+		.nav{
+	display: flex;
+}
+
+.nav i{
+	display: inline-flex;
+	font-size: 40px;
+    margin-top: -05px;
+    align-items: end;
+}
+
+.nav a{
+	color: #e8d6cb;
+	font-size: var(--p-font);
+	font-weight: 600;
+	margin: 0 13px;
+	transition: all .50s ease;
+	align-items: center;
+	padding: 8px 15px;
+	background: var(--main-color);
+	border-radius: 3rem;
+	box-shadow: black 0px 1px 5px;
+	margin-left: 65px; 
+}
+
+.nav a:hover {
+	background-color: var(--bg-color);
+	color: var(--bg-color);
+	box-shadow: black 0px 1px 12px;
+  }
+
+#menu-icon{
+	font-size: 32px;
+	color: #ff9f0d;
+	z-index: 10001;
+	cursor: pointer;
+	padding: 8px 15px;
+	display: none;
+}
+.nav a:hover{
+	transform: scale(1.1);
+	color: white;
+}
+
+/* Dropdown button */
+.dropbtn1 {
+    background-color:  var(--bg-color);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: #282e82; /* White color for the links */
+            margin-left: 20px; /* Adjust spacing between links */
+            font-size: larger;
+            font-weight: bold;
+}
+
+/* Dropdown button hover effect */
+/* Dropdown button */
+	 .dropbtn1 {
+	     background-color:  var(--bg-color);
+	     color: white;
+	     padding: 10px 15px;
+	     font-size: 14px;
+	     border: none;
+	     cursor: pointer;
+	     color: #e8d6cb; /* White color for the links */
+	             margin-left: 20px; /* Adjust spacing between links */
+	             font-size: larger;
+	             font-weight: bold;
+	 }
+
+	 /* Dropdown button hover effect */
+	 .dropbtn1:hover {
+	     background-color:  var(--bg-color);
+	     color: white;
+	 }
+
+	 /* Dropdown container */
+	 .dropdown1 {
+	     position: relative;
+	     display: inline-block;
+	     font-size: 17px;
+	 }
+
+	 /* Dropdown content */
+	 .dropdown-content1 {
+	     display: none;
+	     position: absolute;
+	     background-color: #e8d6cb;
+	     min-width: 160px;
+	     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	     z-index: 1;
+	 }
+
+	 /* Links inside the dropdown */
+	 .dropdown-content1 a {
+	     color: black;
+	     padding: 12px 16px;
+	     text-decoration: none;
+	     display: block;
+	 }
+
+	 /* Change color of dropdown links on hover */
+	 .dropdown-content1 a:hover {
+	     background-color: #d0ada7;;
+	 }
+
+	 /* Show the dropdown menu */
+	 .show1 {
+	     display: block;
+	 }
+
+	 .dropdown-content1 a:hover {
+	 color: white
+	 }
+
+	 .dropdown1:hover 
+
+	 .dropdown-content1 {display: block;}
+
+	 .dropdown1:hover .dropbtn1 {
+	 background-color: var(--bg-color);
+	 }
+
+.about-img img {
+	max-width: 100%;
+  	height: auto;
+}
+
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  margin-left: -40px;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  transition: all .50s ease;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2{
+	color: #ad6a6c; 
+    font-weight: bold;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.about{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	align-items: center;
+	
+}
+
+.about-text{
+	margin-left: -300px;
+	margin-right: 100px;
+	text-align: justify;
+  text-justify: inter-word;
+   font-size: 19px;
+            color: #666;
+            line-height: 1.3;
+}
+.about-img img{
+	margin-left: 100px;
+	width:350px;
+	height: 320px;
+	margin-top: -13px;
+}
+.last{
+ margin-left:100px;
+  margin-right:100px;
+  text-align: justify;
+  text-justify: inter-word;
+  color: black;
+  font-weight: bold;
+ }
+
+.info-box {
+            /* transition: .2s ease-in-out; */          
+            column-gap: 30px;
+            float: left;
+            width: 25%;
+            padding: 30px;
+            margin : 30px;
+            margin-left: 75px;
+            background-color: #cc8b86;
+            border-radius: 15px 15px 15px 15px;
+            box-shadow: #cc8b86 0px 0px 5px;
+        }
+.info-box:hover {
+  transform: scale(1.1);
+  box-shadow: black 0px 1px 15px;
+}
+
+        .details {
+            padding: 15px;
+            text-align: center;
+            color:#f7ede2;
+        }
+
+h6{
+	text-align: justify;
+  text-justify: inter-word;
+}
+
+h2{
+	text-align: center;
+	color: #e8d6cb;
+	font-size: 30px;
+}
+
+h3{
+	color: #e8d6cb;
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 100px;
+}
+
+h1{
+	text-align: center;
+	color: #ad6a6c;
+	font-weight: bold;
+}
+
+        .work {
+        	padding-top: 50px;
+            background-color: #ad6a6c; /* Light blue background color */
+            height: 680px;
+        }
+        
+        .works {
+        	font-weight:bold;
+        	font-size: 40px;
+        }
+
+</style>
+</html>
+

@@ -18,7 +18,7 @@
     <header>
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="nav-brand">Nurhafiz J. Portfolio</a>
-            <div class="hidden md:flex space-x-8 nav-links">
+            <div class="md:flex space-x-8 nav-links mr-2">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
@@ -49,25 +49,31 @@
         <!-- Hero/About Section -->
         <section id="about" class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-center min-h-screen-minus-header">
             <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 md:pr-12">
-                <h1 class="hero-title">
+                <h1 class="hero-title ml-10">
                     Hi, I'm <span class="highlight-text">Muhammad Nurhafiz Juheiri</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle ml-10">
                     A Passionate <span class="font-semibold highlight-text">Information Systems Engineering Graduate</span>
                 </p>
                 <p class="hero-description">
-                    <br>
-                    Motivated and skilled Information Systems Engineering graduate passionate about solving business problems through software development or data analysis. With hands-on experience in front-end and back-end development using HTML, CSS, JavaScript, and PostgreSQL, enhanced strong technical skills throughout studies. Additionally, certified in Power BI Essential Training, with practical experience in data visualization gained through my internship as a Business Analyst. Eager to contribute to the software development life cycle, continuously grow my knowledge, and apply my expertise in creating and maintaining effective IT solutions.
+                    <br>Motivated and skilled Information Systems Engineering graduate passionate about solving business problems through software development or data analysis. With hands-on experience in front-end and back-end development using HTML, CSS, JavaScript, and PostgreSQL, enhanced strong technical skills throughout studies. Additionally, certified in Power BI Essential Training, with practical experience in data visualization gained through my internship as a Business Analyst. Eager to contribute to the software development life cycle, continuously grow my knowledge, and apply my expertise in creating and maintaining effective IT solutions.
                 </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
-                    <a href="#contact" class="btn btn-primary ml-10">
-                        <i class="fas fa-envelope mr-2"></i> Contact Me
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8 ml-10">
+                    <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank" class="btn btn-secondary ml-3">
-                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    <a href="https://github.com/hafizjuheirihub" class="btn btn-primary">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nhfz8?igsh=MXM3MW92MDc2M3Znag%3D%3D&utm_source=qr" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <div class="flex justify-center md:justify-start mt-6"></div>
+                    <a href="resume.pdf" target="_blank" class="btn-cv">View & Download CV
                     </a>
                 </div>
-            </div>
+                </div>
+                </div>
             <div class="md:w-2/5 flex justify-center md:justify-end">
                 <img src="images.jpeg" alt="Muhammad Nurhafiz Juheiri" class="profile-image">
             </div>
@@ -100,20 +106,39 @@
         <section id="education" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <h2 class="section-heading">Education</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- UiTM -->
-                    <div class="card">
-                        <h3 class="card-title">Bachelor of Information Systems (Hons.) Information Systems Engineering</h3>
-                        <p class="card-subtitle">University of Technology Mara (UiTM), Jasin Melaka</p>
-                        <p class="card-date">Oct 2021 - Feb 2025</p>
-                        <p class="card-text">CGPA: 3.32</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Perak Matriculation College -->
+                    <div class="card text-center">
+                        <div class="w-full flex justify-center items-center mb-6">
+                        <img src="smk.png" alt="SMK Logo" class="w-40 h-40 object-cover rounded-lg border-2 border-gray-300">
+                        </div>
+                        <h3 class="card-title">Secondary Education</h3>
+                        <p class="card-subtitle">SMKA Maahad Hamidiah, Kajang, Selangor</p>
+                        <p class="card-date">January 2015 - December 2019</p>
+                        <p class="card-text">Result: 6A 2B 3C</p>
+                        <p class="card-text">Course: Pure Science</p>
                     </div>
                     <!-- Perak Matriculation College -->
-                    <div class="card">
-                        <h3 class="card-title">Malaysia Matriculation Program - Module III (Science Computer)</h3>
-                        <p class="card-subtitle">Perak Matriculation College, Gopeng</p>
+                    <div class="card text-center">
+                        <div class="w-full flex justify-center items-center mb-6">
+                        <img src="matrics.png" alt="Kmpk Logo" class="w-40 h-40 object-cover rounded-lg border-2 border-gray-300">
+                        </div>
+                        <h4 class="card-title">Pre-University Education</h4>
+                        <p class="card-subtitle">Perak Matriculation College, Gopeng, Perak</p>
                         <p class="card-date">July 2020 - May 2021</p>
                         <p class="card-text">CGPA: 3.33, MUET: Band 3</p>
+                        <p class="card-text">Course: Module III (Science Computer)</p>
+                    </div>
+                    <!-- UiTM -->
+                    <div class="card text-center">
+                        <div class="w-full flex justify-center items-center mb-6">
+                        <img src="uitm.png" alt="UiTM Logo" class="w-40 h-40 object-cover rounded-lg border-2 border-gray-300">
+                        </div>
+                        <h3 class="card-title">Undergraduate Education</h3>
+                        <p class="card-subtitle">University of Technology Mara (UiTM), Jasin, Melaka</p>
+                        <p class="card-date">Oct 2021 - Feb 2025</p>
+                        <p class="card-text">CGPA: 3.32</p>
+                        <p class="card-text">Course: Bachelor of Information Systems (Hons) Information Systems Engineering</p>
                     </div>
                 </div>
             </div>
@@ -128,7 +153,7 @@
                     <div class="card project-item" data-project-id="project1">
                         <h3 class="card-title">Machine Allocation & Maintenance Process Mapping</h3>
                         <p class="card-subtitle">Internship Project</p>
-                        <p class="card-date">During Internship (Sep 2024 - Feb 2025)</p>
+                        <!-- <p class="card-date">During Internship (Sep 2024 - Feb 2025)</p> -->
                         <ul class="card-list hidden" id="project1-details">
                             <li>Transcribed interview recordings to identify opportunities and risks in the current process.</li>
                             <li>Engaged with stakeholders and related teams to validate the updated process mapping.</li>
@@ -191,11 +216,11 @@
                         <div class="space-y-3">
                             <div>
                                 <h4 class="skill-category">Programming Languages:</h4>
-                                <p class="skill-list">Java, JavaScript, C++</p>
+                                <p class="skill-list">Java, JavaScript, C++, Python</p>
                             </div>
                             <div>
                                 <h4 class="skill-category">Web Development:</h4>
-                                <p class="skill-list">HTML, CSS, Bootstrap</p>
+                                <p class="skill-list">HTML, CSS, Tailwind CSS, Bootstrap</p>
                             </div>
                             <div>
                                 <h4 class="skill-category">Database Management:</h4>
@@ -211,7 +236,7 @@
                             </div>
                             <div>
                                 <h4 class="skill-category">Software & Tools:</h4>
-                                <p class="skill-list">Eclipse, Visual Studio Code, NetBeans, Draw.io, StarUML, Lucidchart</p>
+                                <p class="skill-list">Eclipse, Visual Studio Code, NetBeans, Draw.io, StarUML, Lucidchart, Jupyter Notebook, Git, Jira</p>
                             </div>
                             <div>
                                 <h4 class="skill-category">Data Visualization:</h4>
@@ -279,6 +304,7 @@
                         <p class="card-subtitle">Security Committee Member</p>
                         <p class="card-date">Jan 2023</p>
                         <ul class="card-list">
+                            <li>Volunteered as Security Commitee Member</li>
                             <li>Involved in mangrove tree planting, team activities, and cleaning at Pulau Besar, Melaka.</li>
                         </ul>
                     </div>
@@ -287,6 +313,7 @@
                         <p class="card-subtitle">Souvenir Committee Member</p>
                         <p class="card-date">June 2023</p>
                         <ul class="card-list">
+                            <li>Served as Souvenir Commitee Member</li>
                             <li>Participated in an educational visit focused on exploring software improvement strategies within the company.</li>
                             <li>Managed the end-to-end process of souvenir curation and acquisition.</li>
                         </ul>
@@ -309,16 +336,12 @@
         <section id="contact" class="contact-section py-16 md:py-24">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-heading-light">Get in Touch</h2>
-                <p class="contact-availability">I'm currently available for full-time employment beginning 3 March 2025.</p>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-8 mb-12">
                     <a href="mailto:nhafizj02@gmail.com" class="contact-link">
                         <i class="fas fa-envelope mr-3"></i> nhafizj02@gmail.com
                     </a>
                     <a href="tel:+601113141992" class="contact-link">
                         <i class="fas fa-phone-alt mr-3"></i> (+60)1113141992
-                    </a>
-                    <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin mr-3"></i> LinkedIn
                     </a>
                 </div>
                 <div class="references-section">
@@ -341,12 +364,6 @@
         <div class="footer-content-wrapper">
             <p>&copy; 2025 Muhammad Nurhafiz Juheiri. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/nurhafizjuheiri" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:nhafizj02@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
                 <!-- Add GitHub or other relevant links here -->
                 <!-- <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a> -->
             </div>

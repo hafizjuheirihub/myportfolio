@@ -1,10 +1,13 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        // Exclude certificate links from smooth scroll
+        if (!this.classList.contains('certificate-link')) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -44,8 +47,6 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 // Optional: Highlight active navigation link on scroll
-// ... (other parts of your script.js) ...
-
 const sections = document.querySelectorAll('main section[id]');
 const navLinksDesktop = document.querySelectorAll('.nav-links a');
 const navLinksMobile = document.querySelectorAll('.mobile-menu-link');
@@ -74,3 +75,55 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// --- CERTIFICATE MODAL SCRIPT ---
+// Get the modal elements
+const modal = document.getElementById("certificateModal");
+const modalImg = document.getElementById("modalImage");
+const certificateLinks = document.querySelectorAll(".certificate-link");
+const closeModalButton = document.getElementById("closeModalButton");
+
+// Function to open modal
+function openModal(imageSrc) {
+    if (modal && modalImg) {
+        modal.style.display = "flex"; // Use flex to enable centering
+        modalImg.src = imageSrc;
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+// Function to close modal
+function closeModal() {
+    if (modal) {
+        modal.style.display = "none";
+        modalImg.src = ""; // Clear image src to avoid showing old image briefly
+        document.body.style.overflow = 'auto'; // Restore background scrolling
+    }
+}
+
+// Add click listeners to all certificate links
+certificateLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const imageSrc = this.getAttribute("data-image-src");
+        openModal(imageSrc);
+    });
+});
+
+// Add click listener to the close button
+if (closeModalButton) {
+    closeModalButton.addEventListener('click', closeModal);
+}
+
+// Close the modal when clicking outside the modal content
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+});
+
+// Close the modal with the Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape" && modal && modal.style.display === "flex") {
+        closeModal();
+    }
+});

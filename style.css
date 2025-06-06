@@ -403,6 +403,7 @@ justify-content: center;
             font-weight: 500; /* Tailwind: font-medium */
             transition: background-color 0.3s ease;
             text-align: center;
+            margin-left: 40px;
         }
 
         .btn-cv:hover {
@@ -629,4 +630,74 @@ footer p {
 /* This class is used on the hero section to make it take up screen height minus header. */
 .min-h-screen-minus-header {
     min-height: calc(100vh - 74px); /* Ensure 74px matches actual header height */
+}
+
+/* --- MODAL STYLES --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1050; /* Higher than header to ensure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Darker overlay */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--background-card);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    width: 90%;
+    max-width: 800px;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 8px 30px var(--shadow-strong-color);
+    animation-name: zoomIn;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0}
+    to {transform: scale(1); opacity: 1}
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem; /* Space between header and image */
+    border-radius: var(--border-radius);
+}
+
+.close-button {
+    color: var(--text-medium);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color var(--transition-speed) ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
 }

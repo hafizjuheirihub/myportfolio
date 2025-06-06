@@ -68,10 +68,13 @@
                     <a href="https://www.instagram.com/nhfz8?igsh=MXM3MW92MDc2M3Znag%3D%3D&utm_source=qr" target="_blank" class="btn btn-primary">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <div class="flex justify-center md:justify-start mt-6"></div>
+                    <!-- <div class="flex justify-center md:justify-start mt-6"></div>
+                    <a href="resume.pdf" target="_blank" class="btn-cv">View & Download CV
+                    </a> -->
+                </div>
+                <div class="flex justify-center md:justify-start mt-6 ml-20"></div>
                     <a href="resume.pdf" target="_blank" class="btn-cv">View & Download CV
                     </a>
-                </div>
                 </div>
                 </div>
             <div class="md:w-2/5 flex justify-center md:justify-end">
@@ -279,15 +282,24 @@
                     <div class="card">
                         <h3 class="card-title-small"><i class="fas fa-certificate mr-2 highlight-text"></i>Certifications</h3>
                         <ul class="card-list">
-                            <li>Power BI Essential Training (Nov 2024)</li>
+                            <li>
+                                Power BI Essential Training (Nov 2024)
+                                <a href="#" class="btn-link certificate-link block mt-1" data-image-src="cert1.jpeg">See Certificate</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- Awards and Recognition -->
                     <div class="card">
                         <h3 class="card-title-small"><i class="fas fa-award mr-2 highlight-text"></i>Awards and Recognition</h3>
                         <ul class="card-list">
-                            <li>Dean List Award Semester 2 - Session 2021/2022 (Aug 2022)</li>
-                            <li>Dean List Award Semester 6 - Session 2023/2024 (Aug 2024)</li>
+                            <li>
+                                Dean List Award Semester 2 - Session 2021/2022 (Aug 2022)
+                                <a href="#" class="btn-link certificate-link block mt-1" data-image-src="cert1.jpeg">See Certificate</a>
+                            </li>
+                            <li>
+                                Dean List Award Semester 6 - Session 2023/2024 (Aug 2024)
+                                <a href="#" class="btn-link certificate-link block mt-1" data-image-src="cert1.jpeg">See Certificate</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -369,6 +381,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- MODAL HTML STRUCTURE -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="text-xl font-semibold text-gray-700">Certificate Preview</span>
+                <button type="button" class="close-button" id="closeModalButton">&times;</button>
+            </div>
+            <img id="modalImage" src="cert1.jpeg" alt="Certificate Image" class="modal-image">
+        </div>
+    </div>
+    <!-- END MODAL -->
 
     <script src="script.js"></script>
 </body>
